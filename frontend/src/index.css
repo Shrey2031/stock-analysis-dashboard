@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl shadow-xl;
+  }
+  .metric-card {
+    @apply glass-card p-6 text-center transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+  .chart-container {
+    @apply glass-card p-6 rounded-xl overflow-hidden;
+  }
+  .insight-card {
+    @apply glass-card p-6 border-l-4 border-blue-500;
+  }
+  .loading-skeleton {
+    @apply bg-gray-700 animate-pulse rounded;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded;
+}
